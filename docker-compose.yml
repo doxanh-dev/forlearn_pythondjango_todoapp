@@ -1,0 +1,19 @@
+version: "3.7"
+# define all services
+services:
+  django:
+    image: "todoapp:dev"
+    restart: "no"
+    container_name: todoapp
+    ports:
+      - "8000:8000"
+    privileged: "true"
+    #depends_on:
+    #  - mongodb
+    build:
+      context: ./
+      dockerfile: dockfile/python-django
+    volumes:
+      - "./data/source:/code"
+    command: tail -f /dev/null
+    #command: python manage.py runserver 0.0.0.0:8000
