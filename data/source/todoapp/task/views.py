@@ -3,7 +3,5 @@ from django.http import HttpResponse
 
 
 def index(request):
-    return HttpResponse("Hello, world. You're at the TASK index.")
-
-
-# Create your views here.
+    context = {'name': "HungDH"}
+    return render(request, 'task/list.html', context)

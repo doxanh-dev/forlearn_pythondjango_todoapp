@@ -1,0 +1,99 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=11" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <meta name="robots" content="all,follow" />
+  <meta name="theme-color" content="#39f">
+
+  <!-- CSS FILES -->
+  <link rel="shortcut icon" href="{% static 'favicon.ico' %}" />
+  <!---NOTE : load file favicon-->
+  <link rel="apple-touch-icon" sizes="180x180" href="{% static 'apple-touch-icon.png' %}" />
+  <!---NOTE : load file apple touch icon-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.7/css/uikit.min.css" />
+  <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+
+
+  <!-- JS Files -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.7.2/dist/semantic.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.7.2/dist/semantic.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>
+  <!--- load main.js -->
+  <script src="{% static 'js/main.js' %}"></script>
+
+  <!---@{head} -->
+</head>
+
+<body>
+  <!--HEADER-->
+  <header id="site-head">
+    <div class="uk-container uk-container-expand">
+      <div class="uk-grid uk-grid-medium uk-flex uk-flex-middle" data-uk-grid>
+        <div class="uk-width-auto">
+          <a href="/" class="uk-logo" title="todo app" data-uk-tooltip><img
+              src="https://static.djangoproject.com/img/logos/django-logo-negative.png" alt="todoapp"></a>
+        </div>
+        <div class="uk-width-expand">
+          <ul class="uk-subnav" data-uk-margin>
+            <li><a href="/" title="Home" data-uk-tooltip><i class="home green icon"></i>Home</a></li>
+            <li><a href="/task/" title="Todo list" data-uk-tooltip><i class="layer group green icon"></i>Todo</a>
+            </li>
+          </ul>
+        </div>
+        <div class="uk-width-auto">
+          <ul class="uk-subnav" data-uk-margin>
+            <li class="uk-visible@s">
+              <a href="#" title="Your profile" data-uk-tooltip><i class="user red icon"></i>Le Huu Hoang</a>
+              <div class="uk-dropdown"
+                data-uk-dropdown="mode: click; animation: uk-animation-slide-bottom-small; duration: 150">
+                <ul class="uk-nav uk-dropdown-nav">
+                  <li class="uk-nav-header"><i class="id card green icon"></i>Le Huu Hoang</li>
+                  <li class="uk-active"><a href="/settings/"><i class="user cog green icon"></i>Settings</a></li>
+                  <li class="uk-nav-divider"></li>
+                  <li><a href="/logout/"><i class="power off green icon"></i>Logout</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="uk-hidden@s"><a data-uk-navbar-toggle-icon data-uk-toggle href="#offcanvas-nav"></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!--/HEADER-->
+  <div class="spacer"></div>
+  <!--CARDS WRAPPER-->
+  <section class="uk-section uk-section-small uk-section-default uk-padding-small uk-padding-remove-bottom">
+    <div class="uk-container uk-container-large uk-margin-large-bottom" id="app">
+      {% block content %}
+      {% endblock %}
+    </div>
+  </section>
+  <!--/CARDS WRAPPER-->
+  <!--FOOTER-->
+  <footer id="site-foot" class="uk-section uk-section-secondary uk-section-xsmall">
+    <div class="uk-container uk-text-small uk-text-center">
+      © 2019 <span class="uk-icon uk-icon-image"
+        style="background-image: url({% static '/images/logo/logo.png' %});"></span>
+      <a href="https://devzone.top/">todoapp</a> - Built with <a href="https://www.totaljs.com/"
+        uk-tooltip="Visit Total.js site" target="_blank" rel="noopener"><img
+          data-src="{% static '/images/totaljs-logo.png' %}" width="70" alt="Total.js" uk-img></a>
+    </div>
+  </footer>
+  <!--/FOOTER-->
+  <!-- Scripts -->
+
+  <!-- UIkit JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.7/js/uikit.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.7/js/uikit-icons.min.js"></script>
+
+</body>
+
+</html>
