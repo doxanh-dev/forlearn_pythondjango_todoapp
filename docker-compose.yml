@@ -2,14 +2,14 @@ version: "3.7"
 # define all services
 services:
   django:
-    image: "todoapp:dev"
+    image: "webapp:todoapp"
     restart: "no"
-    container_name: todoapp
+    container_name: web_todoapp
     ports:
       - "8000:8000"
     privileged: "true"
-    #depends_on:
-    #  - mongodb
+    depends_on:
+      - mysql
     build:
       context: ./
       dockerfile: dockfile/python-django
@@ -17,3 +17,22 @@ services:
       - "./data/source:/code"
     #command: tail -f /dev/null
     command: python todoapp/manage.py runserver 0.0.0.0:8000
+  mysql:
+    image: "mysql:todoapp"
+    restart: "no"
+    container_name: mysql_todoapp
+    ports:
+      - "3306:3306"
+      - "33060:33060"
+    privileged: "true"
+    build:
+      context: ./
+      dockerfile: dockfile/mysql
+    #volumes:
+    #  - "./data/mysql/conf/my.cnf:/etc/mysql/my.cnf"
+    environment:
+      - MYSQL_ROOT_PASSWORD=Ab@123456
+      - MYSQL_DATABASE=todoapp
+      - MYSQL_USER=todoapp
+      - MYSQL_PASSWORD=Ab123456@
+      - MYSQL_ROOT_HOST=%

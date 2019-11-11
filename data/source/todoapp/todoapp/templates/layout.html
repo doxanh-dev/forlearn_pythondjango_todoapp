@@ -15,7 +15,7 @@
   <!---NOTE : load file favicon-->
   <link rel="apple-touch-icon" sizes="180x180" href="{% static 'apple-touch-icon.png' %}" />
   <!---NOTE : load file apple touch icon-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.7/css/uikit.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.2.3/dist/css/uikit.min.css" />
   <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
 
 
@@ -41,8 +41,7 @@
         </div>
         <div class="uk-width-expand">
           <ul class="uk-subnav" data-uk-margin>
-            <li><a href="/" title="Home" data-uk-tooltip><i class="home green icon"></i>Home</a></li>
-            <li><a href="/task/" title="Todo list" data-uk-tooltip><i class="layer group green icon"></i>Todo</a>
+            <li><a href="/" title="Todo list" data-uk-tooltip><i class="layer group green icon"></i>Todo</a>
             </li>
           </ul>
         </div>
@@ -80,19 +79,17 @@
   <!--FOOTER-->
   <footer id="site-foot" class="uk-section uk-section-secondary uk-section-xsmall">
     <div class="uk-container uk-text-small uk-text-center">
-      © 2019 <span class="uk-icon uk-icon-image"
-        style="background-image: url({% static '/images/logo/logo.png' %});"></span>
-      <a href="https://devzone.top/">todoapp</a> - Built with <a href="https://www.totaljs.com/"
-        uk-tooltip="Visit Total.js site" target="_blank" rel="noopener"><img
-          data-src="{% static '/images/totaljs-logo.png' %}" width="70" alt="Total.js" uk-img></a>
+      © 2019 Built with <a href="https://www.djangoproject.com/" uk-tooltip="Visit Django site" target="_blank"
+        rel="noopener"><img data-src="https://static.djangoproject.com/img/logos/django-logo-negative.png" width="70"
+          alt="Django" uk-img></a>
     </div>
   </footer>
   <!--/FOOTER-->
   <!-- Scripts -->
 
   <!-- UIkit JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.7/js/uikit.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.7/js/uikit-icons.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.2.3/dist/js/uikit.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.2.3/dist/js/uikit-icons.min.js"></script>
 
 </body>
 

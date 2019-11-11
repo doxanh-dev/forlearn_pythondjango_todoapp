@@ -24,14 +24,18 @@ SECRET_KEY = '*7+$o($*6q&gl)nr&+z0cac%=v!!56=x281gjs@n8n2!3l^l)!'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin', 'django.contrib.auth',
-    'django.contrib.contenttypes', 'django.contrib.sessions',
-    'django.contrib.messages', 'django.contrib.staticfiles', 'task'
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'task'  # NOTE : vì tạo thêm app task, nên cần bổ sung vào đây
 ]
 
 MIDDLEWARE = [

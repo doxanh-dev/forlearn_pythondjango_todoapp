@@ -16,8 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 
+handler404 = 'task.views.handler404'
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     # Thêm cấu hình của task app
-    path('task/', include('task.urls')),
+    path('', include('task.urls')),
 ]

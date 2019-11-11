@@ -1,8 +1,7 @@
 {% extends 'layout.html' %}
 {% block content %}
 <ul class="uk-breadcrumb">
-  <li><a href="/"><i class="home green small icon"></i>Trang chủ</a></li>
-  <li><a href="/task/">Todo</a></li>
+  <li><a href="/"><i class="home green small icon"></i>Todo</a></li>
   <li><span>Danh sách</span></li>
 </ul>
 <div class="uk-card uk-card-default uk-width-1-1">
@@ -14,11 +13,7 @@
   </div>
   <div class="uk-card-body" style="padding-top: 10px !important">
     <div class="ui mini compact menu">
-      <a class="item" href="/">
-        <i class="reply green icon"></i>
-        Quay lại
-      </a>
-      <a class="item" href="/task/create/">
+      <a class="item" href="/create/">
         <i class="plus circle green  icon"></i>
         Thêm mới Task
       </a>

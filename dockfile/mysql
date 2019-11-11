@@ -1,0 +1,19 @@
+FROM mysql
+LABEL description="MySQL DB"
+EXPOSE 3306
+
+RUN apt-get update && apt-get install vim -y
+
+#WORKDIR /data/mysql/conf/
+#COPY . /etc/my.cnf.d
+COPY ./data/conf/mysql/ /etc/mysql/
+
+# copy scripts initdb
+COPY ./data/scripts/mysql/develop.conf /tmp/
+COPY ./data/scripts/mysql/initdb.sh /docker-entrypoint-initdb.d/
+COPY ./data/scripts/mysql/db.sql /tmp/
+
+RUN mkdir /var/lib/mysql-files
+RUN chown -R mysql:mysql /var/lib/mysql-files/
+RUN chmod 777 /var/lib/mysql-files/
+RUN chmod 777 /var/log/
